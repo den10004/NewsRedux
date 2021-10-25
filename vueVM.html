@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Список: {{title}}</h1>
+    <div>
+        <input type="text" 
+        v-bind:placeholder="placeholderS" 
+        v-bind:value="inputValue" 
+        v-on:input="inputChangeHandler"
+        v-on:keypress.enter="addNewNote"
+        />
+        <h2>inputValue: {{inputValue}}</h2>
+        <button v-on:click="addNewNote">ADD</button>
+        <hr />
+        <ul v-if="notes.length !== 0">
+            <li v-for="(myNote, idx) in notes">{{idx +1}}. {{myNote}}
+            <button v-on:click="deleteNote(idx, $event)">DELETE</button></li>
+        </ul>
+        <div v-else="notes.length === 0">Нет заметок</div>
+    </div>
+  </div>
+
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data() {
+        return {
+            title: 0,
+            placeholderS: 'название',
+            inputValue: '',
+            notes: ['заметка1'],
+        }
+      },
+      methods: {
+          inputChangeHandler(e) {
+            this.inputValue = e.target.value
+          },
+          addNewNote() {
+              if(this.inputValue != '') {
+                this.notes.push(this.inputValue)
+                this.inputValue = ''
+              }
+             
+          },
+          deleteNote(idx) {
+            this.notes.splice(idx, 1)
+          }
+     
+      }
+    })
+  </script>
+</body>
+</html>
