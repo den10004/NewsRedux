@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/NewsRedux/static/css/main.9175e262.chunk.css",
+    "main.js": "/NewsRedux/static/js/main.68a4fbc4.chunk.js",
+    "main.js.map": "/NewsRedux/static/js/main.68a4fbc4.chunk.js.map",
+    "runtime-main.js": "/NewsRedux/static/js/runtime-main.3fe28169.js",
+    "runtime-main.js.map": "/NewsRedux/static/js/runtime-main.3fe28169.js.map",
+    "static/js/2.9b5ab18a.chunk.js": "/NewsRedux/static/js/2.9b5ab18a.chunk.js",
+    "static/js/2.9b5ab18a.chunk.js.map": "/NewsRedux/static/js/2.9b5ab18a.chunk.js.map",
+    "index.html": "/NewsRedux/index.html",
+    "static/css/main.9175e262.chunk.css.map": "/NewsRedux/static/css/main.9175e262.chunk.css.map",
+    "static/js/2.9b5ab18a.chunk.js.LICENSE.txt": "/NewsRedux/static/js/2.9b5ab18a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3fe28169.js",
+    "static/js/2.9b5ab18a.chunk.js",
+    "static/css/main.9175e262.chunk.css",
+    "static/js/main.68a4fbc4.chunk.js"
+  ]
+}
