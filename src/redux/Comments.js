@@ -6,7 +6,6 @@ import { commentCreate, commentsLoad } from "./actions";
 
 function Comments(props) {
   const [textComment, setTextComment] = useState("");
-
   const dispatch = useDispatch();
   const comments = useSelector((state) => {
     const { commentsReducer } = state;
@@ -24,8 +23,8 @@ function Comments(props) {
   };
 
   useEffect(() => {
-    dispatch(commentsLoad())
-  },[])
+    dispatch(commentsLoad());
+  }, []);
 
   return (
     <div className="card-comments">
@@ -34,8 +33,8 @@ function Comments(props) {
         <input type="submit" hidden />
       </form>
       {!!comments.length &&
-        comments.map((res) => {
-          return <SingleComment key={res.id} data={res} />;
+        comments.map((res, index) => {
+          return <SingleComment key={index} data={res} />;
         })}
     </div>
   );

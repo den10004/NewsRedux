@@ -14,9 +14,12 @@ function App() {
         <Spin />
         <div className="card">
           {error && <div className="error-message">{error}</div>}
+          <div className="card__header">
+            <h2>Новости России</h2>
+            <a href="https://newsapi.org/" target="_blank">Новостного агентства NewsApi</a>
+          </div>
 
-          <div className="card-image">
-            <img src="./sea.jpg" alt="surfing" />
+          <div className="card-block">
             <Title />
             <Likes />
           </div>

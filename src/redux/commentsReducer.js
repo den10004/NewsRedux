@@ -1,4 +1,9 @@
-import { COMMENT_CREATE, COMMENT_UPDATE, COMMENT_DELETE, COMMENTS_LOAD } from "./type";
+import {
+  COMMENT_CREATE,
+  COMMENT_UPDATE,
+  COMMENT_DELETE,
+  COMMENTS_LOAD,
+} from "./type";
 
 const initialState = {
   comments: [],
@@ -12,19 +17,19 @@ export const commentsReducer = (state = initialState, action) => {
         comments: [...state.comments, action.data],
       };
 
-      case COMMENTS_LOAD:
-        const commentsNew = action.data.map(res => {
-          return {
-            text: res.name,
-            id: res.id
-          }
-        })
+    case COMMENTS_LOAD:
+      const commentsNew = action.data.map((res) => {
         return {
-          ...state,
-          comments: commentsNew,
+          //   text: res.name,
+          text: res.title,
+          url: res.url,
+          // id: res.id
         };
-  
-
+      });
+      return {
+        ...state,
+        comments: commentsNew,
+      };
 
     case COMMENT_UPDATE:
       const { data } = action;

@@ -87,9 +87,16 @@ export function commentsLoad() {
     try {
       dispatch(loaderOn());
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/comments?_limit=10"
+     //  "https://jsonplaceholder.typicode.com/comments?_limit=10"
+     // "https://nomoreparties.co/news/v2/everything?language=ru&sortBy=publishedAt&pageSize=50&qInTitle=russia&apiKey=10e8db0981ec4941becf1c27cd92454d"
+      "https://newsapi.org/v2/everything?language=ru&sortBy=publishedAt&pageSize=100&qInTitle=russia&apiKey=10e8db0981ec4941becf1c27cd92454d"
       );
-      const jsonData = await response.json();
+
+
+    const jsonDataNews = await response.json();
+    // const jsonData = await response.json();
+    const jsonData = jsonDataNews.articles
+  //    console.log(jsonData)
       dispatch({
         type: COMMENTS_LOAD,
         data: jsonData,
